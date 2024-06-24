@@ -24,13 +24,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          ref: adf_publish
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v4
         with:
             name: my-artifact
-            path: adf_publish/adfdevesha/**
+            path: adfdevesha/**
             
