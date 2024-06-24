@@ -59,7 +59,7 @@ jobs:
     # ARM template parameters file name
           armTemplateParametersFile: adfdevesha/ARMTemplateParametersForFactory.json
     # Parameters which will be replaced in the ARM template
-          additionalParameters: factoryName= adfprodesha
+          additionalParameters: factoryName= "adfprodesha"
       - name: Run Pre-deployment script
         shell: pwsh
         run: pwsh adfdevesha/trigger.ps1 -armTemplate adfdevesha/ARMTemplateForFactory.json  -ResourceGroupName testrg -DataFactoryName adfprodesha -predeployment:$False -deleteDeployment:$True
