@@ -45,7 +45,7 @@ jobs:
           enable-AzPSSession: true
       - name: Run Pre-deployment script
         shell: pwsh
-        run: pwsh -File "adfdevesha/trigger.ps1 -armTemplate adfdevesha/ARMTemplateForFactory.json  -ResourceGroupName testrg -DataFactoryName adfprodesha -predeployment $True -deleteDeployment $False"
+        run: pwsh -command "adfdevesha/trigger.ps1 -armTemplate adfdevesha/ARMTemplateForFactory.json  -ResourceGroupName testrg -DataFactoryName adfprodesha -predeployment $True -deleteDeployment $False"
       - name: data-factory-deploy
         uses: Azure/data-factory-deploy-action@v1.2.0
         with:
