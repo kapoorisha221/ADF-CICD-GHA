@@ -33,8 +33,8 @@ jobs:
       - name: Install Az PowerShell module
         run: if('${{ inputs.skipAzModuleInstallation }}' -ne 'true') { Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force }
         shell: pwsh
-      - name: Azure CLI Login
-        run: az login
+      # - name: Azure CLI Login
+      #   run: az login
       - name: OIDC Login to Azure Public Cloud with AzPowershell (enableAzPSSession true)
         uses: azure/login@v1
         with:
