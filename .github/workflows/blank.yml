@@ -36,9 +36,9 @@ jobs:
       - name: OIDC Login to Azure Public Cloud with AzPowershell (enableAzPSSession true)
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.adf.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.adf.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.adf.AZURE_SUBSCRIPTION_ID }} 
+          client-id: 44ce4d40-3a24-4af1-a1f8-48595467f379
+          tenant-id: d761e4c1-1cf1-4a04-be8d-709671979248
+          subscription-id: 4687c1ca-c1ae-47e0-ae76-60a68ee370d3 
           enable-AzPSSession: true
       - name: Run Pre-deployment script
         shell: pwsh
