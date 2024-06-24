@@ -36,7 +36,7 @@ jobs:
       # - name: Azure CLI Login
       #   run: az login
       - name: OIDC Login to Azure Public Cloud with AzPowershell (enableAzPSSession true)
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
           client-id: 44ce4d40-3a24-4af1-a1f8-48595467f379
           tenant-id: d761e4c1-1cf1-4a04-be8d-709671979248
