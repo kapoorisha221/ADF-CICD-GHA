@@ -40,7 +40,8 @@ jobs:
         with:
           client-id: 44ce4d40-3a24-4af1-a1f8-48595467f379
           tenant-id: d761e4c1-1cf1-4a04-be8d-709671979248
-          subscription-id: 4687c1ca-c1ae-47e0-ae76-60a68ee370d3 
+          subscription-id: 4687c1ca-c1ae-47e0-ae76-60a68ee370d3
+          client-secret: VK48Q~ji4CqvFV-vHfpILzJ7w3ewjTvkuCyErb1k
           enable-AzPSSession: true
       - name: Run Pre-deployment script
         shell: pwsh
