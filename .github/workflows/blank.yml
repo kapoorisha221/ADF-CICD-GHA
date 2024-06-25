@@ -64,19 +64,37 @@ jobs:
         shell: pwsh
         run: pwsh adfdevesha/trigger.ps1 -armTemplate adfdevesha/ARMTemplateForFactory.json  -ResourceGroupName testrg -DataFactoryName datafactoryesha -predeployment:$True -deleteDeployment:$False
       
-      - name: data-factory-deploy
-        uses: Azure/data-factory-deploy-action@v1.2.0
-        with:
+     # - name: data-factory-deploy
+      #  uses: Azure/data-factory-deploy-action@v1.2.0
+       # with:
           # Data Factory resource group name
-          resourceGroupName: testrg
+        #  resourceGroupName: testrg
           # Data factory name
-          dataFactoryName: datafactoryesha
+         # dataFactoryName: datafactoryesha
     # ARM template file name
-          armTemplateFile: https://teststorageadf9999.blob.core.windows.net/test/ARMTemplateForFactory.json?sp=racwdyti&st=2024-06-25T06:57:26Z&se=2024-06-25T14:57:26Z&spr=https&sv=2022-11-02&sr=b&sig=JfgmGZ7EY%2BgDHZyVxsZMB6djzDdyaicD62WcmHH%2B%2F9c%3D
+          #armTemplateFile: https://teststorageadf9999.blob.core.windows.net/test/ARMTemplateForFactory.json?sp=racwdyti&st=2024-06-25T06:57:26Z&se=2024-06-25T14:57:26Z&spr=https&sv=2022-11-02&sr=b&sig=JfgmGZ7EY%2BgDHZyVxsZMB6djzDdyaicD62WcmHH%2B%2F9c%3D
     # ARM template parameters file name
-          armTemplateParametersFile: https://teststorageadf9999.blob.core.windows.net/test/ARMTemplateParametersForFactory.json?sp=racwdyti&st=2024-06-25T06:58:43Z&se=2024-06-25T14:58:43Z&spr=https&sv=2022-11-02&sr=b&sig=Z8n4%2BYEJACNZ8l2X3Cf7v2cu522PVM4%2BFZxVsWQRIxs%3D
+          #armTemplateParametersFile: https://teststorageadf9999.blob.core.windows.net/test/ARMTemplateParametersForFactory.json?sp=racwdyti&st=2024-06-25T06:58:43Z&se=2024-06-25T14:58:43Z&spr=https&sv=2022-11-02&sr=b&sig=Z8n4%2BYEJACNZ8l2X3Cf7v2cu522PVM4%2BFZxVsWQRIxs%3D
     # Parameters which will be replaced in the ARM template
-          additionalParameters: 'factoryName=datafactoryesha containerUri=https://teststorageadf9999.blob.core.windows.net/test containerSasToken=?sp=racwdli&st=2024-06-25T07:00:59Z&se=2024-06-25T15:00:59Z&spr=https&sv=2022-11-02&sr=c&sig=cCG9iDIoMb6lu6dl3vgEaA7EcnH7eFXZJXw2%2BGOwL0g%3D '
+          #additionalParameters: 'factoryName=datafactoryesha containerUri=https://teststorageadf9999.blob.core.windows.net/test containerSasToken=?sp=racwdli&st=2024-06-25T07:00:59Z&se=2024-06-25T15:00:59Z&spr=https&sv=2022-11-02&sr=c&sig=cCG9iDIoMb6lu6dl3vgEaA7EcnH7eFXZJXw2%2BGOwL0g%3D '
+      - name: Deploy Azure Resource Manager (ARM) Template
+        uses: Azure/arm-deploy@v2
+        with:
+    # Provide the scope of the deployment. Valid values are: 'resourcegroup', 'tenant', 'managementgroup', 'subscription'
+         scope: resourcegroup
+    # Override the Subscription Id set by Azure Login.
+         subscriptionId: 4687c1ca-c1ae-47e0-ae76-60a68ee370d3
+   
+    
+    # Provide the name of a resource group, only required for resource Group deployments.
+         resourceGroupName: testrg
+    # Specify the path or URL to the Azure Resource Manager template.
+         template: https://teststorageadf9999.blob.core.windows.net/test/ARMTemplateForFactory.json?sp=racwdyti&st=2024-06-25T06:57:26Z&se=2024-06-25T14:57:26Z&spr=https&sv=2022-11-02&sr=b&sig=JfgmGZ7EY%2BgDHZyVxsZMB6djzDdyaicD62WcmHH%2B%2F9c%3D
+    
+         parameters: https://teststorageadf9999.blob.core.windows.net/test/ARMTemplateParametersForFactory.json?sp=racwdyti&st=2024-06-25T06:58:43Z&se=2024-06-25T14:58:43Z&spr=https&sv=2022-11-02&sr=b&sig=Z8n4%2BYEJACNZ8l2X3Cf7v2cu522PVM4%2BFZxVsWQRIxs%3D
+    
+         additionalArguments: 'factoryName=datafactoryesha containerUri=https://teststorageadf9999.blob.core.windows.net/test containerSasToken=?sp=racwdli&st=2024-06-25T07:00:59Z&se=2024-06-25T15:00:59Z&spr=https&sv=2022-11-02&sr=c&sig=cCG9iDIoMb6lu6dl3vgEaA7EcnH7eFXZJXw2%2BGOwL0g%3D '
+          
       - name: Run Pre-deployment script
         shell: pwsh
         run: pwsh adfdevesha/trigger.ps1 -armTemplate adfdevesha/ARMTemplateForFactory.json  -ResourceGroupName testrg -DataFactoryName datafactoryesha -predeployment:$False -deleteDeployment:$True
