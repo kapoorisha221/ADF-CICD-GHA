@@ -55,7 +55,7 @@ jobs:
     # The local folder containing all the files and subfolders to upload to the blob container (use a trailing slash).
           source_folder: adfdevesha
     # The target folder to use in the blob container with (do not use a leading or trail
-          is_recursive: trye
+          is_recursive: true
     # If the blob exists it will be skipped, unless this is set to true.
     
           
