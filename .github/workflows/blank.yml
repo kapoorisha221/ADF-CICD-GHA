@@ -89,9 +89,9 @@ jobs:
     # Provide the name of a resource group, only required for resource Group deployments.
          resourceGroupName: testrg
     # Specify the path or URL to the Azure Resource Manager template.
-         template: https://teststorageadf9999.blob.core.windows.net/test/linkedTemplates/ArmTemplate_master.json?sp=r&st=2024-06-25T09:26:00Z&se=2024-06-25T17:26:00Z&spr=https&sv=2022-11-02&sr=b&sig=aTYcbA%2FCIcgLQFrl1YGYbV6xTbpsfdCyyqovcBVH8HY%3D
+         template: https://teststorageadf9999.blob.core.windows.net/test/linkedTemplates/ArmTemplate_master.json?sp=racwdyti&st=2024-06-25T10:46:32Z&se=2024-06-25T18:46:32Z&spr=https&sv=2022-11-02&sr=b&sig=61XJFARkmr89LNltoMaFWlTi42C7VVqbuIFV3cM5nxY%3D
     
-         parameters: https://teststorageadf9999.blob.core.windows.net/test/linkedTemplates/ArmTemplateParameters_master.json?sp=racwdyti&st=2024-06-25T09:27:08Z&se=2024-06-25T17:27:08Z&spr=https&sv=2022-11-02&sr=b&sig=kACKGBmsj9hjETh5uOB9zZOwkDC%2BKl51xdKtD57jdoM%3D  factoryName=datafactoryesha containerUri=https://teststorageadf9999.blob.core.windows.net/test containerSasToken=?sp=racwdli&st=2024-06-25T07:00:59Z&se=2024-06-25T15:00:59Z&spr=https&sv=2022-11-02&sr=c&sig=cCG9iDIoMb6lu6dl3vgEaA7EcnH7eFXZJXw2%2BGOwL0g%3D
+         parameters: https://teststorageadf9999.blob.core.windows.net/test/linkedTemplates/ArmTemplateParameters_master.json?sp=racwdyti&st=2024-06-25T10:47:32Z&se=2024-06-25T18:47:32Z&spr=https&sv=2022-11-02&sr=b&sig=jOhBnRHos%2FhSSOdzuL%2FM0aPND7PSevfUx2lxVvo%2FkoY%3D  factoryName=datafactoryesha containerUri=https://teststorageadf9999.blob.core.windows.net/test/linkedTemplates containerSasToken=?sp=racwdli&st=2024-06-25T07:00:59Z&se=2024-06-25T15:00:59Z&spr=https&sv=2022-11-02&sr=c&sig=cCG9iDIoMb6lu6dl3vgEaA7EcnH7eFXZJXw2%2BGOwL0g%3D
     
         # additionalArguments: 'factoryName=datafactoryesha containerUri=https://teststorageadf9999.blob.core.windows.net/test/linkedTemplates containerSasToken=?sp=racwdli&st=2024-06-25T07:00:59Z&se=2024-06-25T15:00:59Z&spr=https&sv=2022-11-02&sr=c&sig=cCG9iDIoMb6lu6dl3vgEaA7EcnH7eFXZJXw2%2BGOwL0g%3D '
           
